@@ -30,11 +30,16 @@ enum AppointmentStatus {
   COMPLETED
 }
 
-
 enum PaymentStatus {
   UNPAID
   PAID
   FAILED
   CANDELLED
   REFUNDED
+}
+
+enum DoctorVerificationStatus {
+  PENDING
+  APPROVED
+  REJECTED
 }
