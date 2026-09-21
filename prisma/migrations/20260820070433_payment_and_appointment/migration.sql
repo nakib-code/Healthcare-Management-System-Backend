@@ -2,7 +2,7 @@
 CREATE TYPE "AppointmentStatus" AS ENUM ('PENDING', 'CONFIRMED', 'CANCELLED', 'ONGOING', 'COMPLETED');
 
 -- CreateEnum
-CREATE TYPE "PaymentStatus" AS ENUM ('UNPAID', 'PAID', 'FAILED', 'CANDELLED', 'REFUNDED');
+CREATE TYPE "PaymentStatus" AS ENUM ('UNPAID', 'PAID', 'FAILED', 'CANCELLED', 'REFUNDED');
 
 -- CreateTable
 CREATE TABLE "appointments" (
@@ -28,7 +28,7 @@ CREATE TABLE "payments" (
     "paidAt" TEXT,
     "gatewayResponse" JSONB,
     "refundTrxId" TEXT,
-    "refundAmount" DECIMAL(10,2),
+    "refundAmount" DECIMAL(10,2) NOT NULL,
     "refundReason" TEXT,
     "refundedAt" TEXT,
     "appointmentId" TEXT NOT NULL,
